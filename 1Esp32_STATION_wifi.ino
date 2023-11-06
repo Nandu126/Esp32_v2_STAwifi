@@ -1,5 +1,4 @@
 #include <WiFi.h>                                     // needed to connect to setup an accesspoint
-#include <Wire.h>
 
 const char* ssid = "ZhouLab";
 const char* password = "ZhouRobotics917";
