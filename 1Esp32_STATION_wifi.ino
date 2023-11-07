@@ -3,12 +3,12 @@
 const char* ssid = "ZhouLab";
 const char* password = "ZhouRobotics917";
 
-WiFiServer server(80);
-
 
 void setup() {
-  Serial.begin(115200);                               // init serial port for debugging             
- 
+  Serial.begin(115200);  
+  
+ WiFi.mode(WIFI_STA); //set esp to station mode
+  
  AFMS.begin(); //connnecting to controller
 
 
@@ -17,9 +17,9 @@ void setup() {
  
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
-    Serial.print(".");
-    
+    Serial.print("."); 
   }
+  
   Serial.print("Connected to network with IP address: ");
   Serial.println(WiFi.localIP());
   
